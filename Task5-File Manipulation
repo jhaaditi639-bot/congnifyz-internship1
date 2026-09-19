@@ -1,0 +1,10 @@
+with open("input.txt", "r") as file:
+    text = file.read().lower()
+words = text.split()
+count = {}
+for word in words:
+    word = word.strip(".,!?")
+    count[word] = count.get(word, 0) + 1
+
+for word in sorted(count):
+    print(word, ":", count[word])
